@@ -32,7 +32,7 @@ class Snippet(models.Model):
         code snippet.
         """
         lexer = get_lexer_by_name(self.language)
-        linenos = 'table' if self.lineos else False
+        linenos = 'table' if self.linenos else False
         options = {'title': self.title} if self.title else {}
         formatter = HtmlFormatter(linenos=linenos, style=self.style,
                                   full=True, **options)
