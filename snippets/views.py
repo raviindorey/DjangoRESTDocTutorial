@@ -10,7 +10,7 @@ from snippets.models import Snippet
 from snippets.serializers import SnippetSerializer, UserSerializer
 
 
-@api_view
+@api_view(['GET'])
 def api_root(request, format=None):
     return Response({
         'users': reverse('user-list', request=request, format=format),
